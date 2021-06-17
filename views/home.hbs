@@ -1,0 +1,35 @@
+
+    
+<form action="">
+
+    <input id="textbox" type="text" pattern="[a-z]{1,5}">
+    <input id="b1" type="button" value="button">
+    <p id="label"></p>
+</form>
+
+
+<script>
+    b1.addEventListener('click', write)
+
+
+    function write() {
+
+        if(textbox.validity.patternMismatch){
+            var text = document.getElementById('textbox');
+            text.style.border = "2px solid rgba(255, 0, 0)";
+
+            var label = document.getElementById('label');
+            label.innerHTML = "error";
+
+        }else{
+            var text = document.getElementById('textbox');
+            text.style.border = "1px solid rgba(0, 0, 0)";
+
+            var label = document.getElementById('label');
+            label.innerHTML = "ok";
+        }
+
+    }
+
+
+</script>
